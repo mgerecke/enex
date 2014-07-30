@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Firma:</b>
+  <%= @expert.firma %>
+</p>
+
+<p>
+  <b>Plz:</b>
+  <%= @expert.plz %>
+</p>
+
+<p>
+  <b>Ort:</b>
+  <%= @expert.ort %>
+</p>
+
+<p>
+  <b>Objekt art:</b>
+  <%= @expert.objekt_art %>
+</p>
+
+<p>
+  <b>String:</b>
+  <%= @expert.string %>
+</p>
+
+
+<%= link_to 'Edit', edit_expert_path(@expert) %> |
+<%= link_to 'Back', experts_path %>

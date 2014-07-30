@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  firma: MyString
+  plz: MyString
+  ort: MyString
+  objekt_art: MyString
+  string: MyString
+
+two:
+  firma: MyString
+  plz: MyString
+  ort: MyString
+  objekt_art: MyString
+  string: MyString

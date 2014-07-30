@@ -1,0 +1,47 @@
+<div class="content">
+	<h4>Ihre Suche:</h4>
+	<ul>
+		<li>PLZ: <%= @postlz %></li>
+		<li>Objektart: <%= @objart %></li>
+		<li>Radius: <%= @radius %>km</li>
+	</ul>
+
+	<div class="result">		
+		<% if @experts.count > 0 %>
+				<div class="pagination">
+					ergab folgende Treffer: <%= will_paginate @experts, :previous_label => "&laquo; Zur&uuml;ck", :next_label => " Vor &raquo;" %>
+				</div>
+			<table class="table table-hover table-responsive">
+				<thead>
+					<tr>
+						<th>Firma/Name</th>
+						<th>PLZ</th>
+						<th>Ort</th>
+						<th>eMail</th>
+					</tr>
+				</thead>
+				<tbody>
+					<% @experts.each do |e| %>
+						<tr>
+							<% if e.firma.empty? %>
+								<td><%= e.name %></td>
+							<% else %> 
+								<td><%= e.firma %></td>
+							<% end %>
+							<td><%= e.plz %></td>
+							<td><%= e.ort %></td>
+							<td><%= mail_to e.email %></td>
+						</tr>
+					<% end %>
+				</tbody>
+			</table>
+
+		<% else %>
+			<h5><span class="alert"> ergab leider keinen Treffer! </span></h5>
+		<% end %>
+	</div>	
+	<%= button_to "Neue Suche", '/eausweis', :class => "btn btn-info" %>
+	
+</div>
+
+ 

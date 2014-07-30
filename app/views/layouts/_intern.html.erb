@@ -1,0 +1,14 @@
+<div class="menue">
+	<ul>
+		<% if session[:request] == 'login' %>
+			<li>
+				<%= link_to 'Startseite', '/' %>
+			</li>
+		<% end %>
+		<% if signed_in? %>
+			<li>
+				<%= link_to "Logout", '/logout', method: "delete" %>
+			</li>
+		<% end %>
+	</ul>
+</div>

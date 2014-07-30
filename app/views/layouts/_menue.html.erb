@@ -1,0 +1,77 @@
+<div class="menue">
+	<ul>
+		<% if !signed_in? %>
+			<% if session[:request] == '' %>
+				<li>
+					<%= link_to "Energieausweis erstellen", '/eausweis' %>
+				</li>
+				<li>
+					<%= link_to "Energieberatung durchfuehren", '/eberatung' %>
+				</li>
+			<% end %>		
+			<% if session[:request] == 'eausweis' %>
+				<li>
+					<img src="/assets/icon-eausweis-blau100x100.png" width="100" heigth="100" title="Energieausweis erstellen">
+				</li>
+				<li>
+					<%= link_to 'Energieberatung durchfuehren', '/eberatung' %>
+				</li>
+			<% end %>
+			<% if session[:request] == 'eberatung' %>
+				<li>
+					<img src="/assets/icon-eberatung-blau100x100.png" width="100" heigth="100" title="Energieberatung durchf&uuml;hren">
+				</li>
+				<li>
+					<%= link_to 'Energieausweis erstellen', '/eausweis' %>
+				</li>
+			<% end %>
+			<% if session[:request] == '' %>
+				<li>
+					<%= link_to "Kontakt", '/contact' %>
+				</li>
+				<li>
+					<%= link_to "Impressum", '/impressum' %>
+				</li>
+				<li>
+					<a  href="#">Energieportal</a>
+				</li>
+				<p>&nbsp;</p>
+			<% end %>
+		<% end %>
+		<% if !signed_in? && session[:request] != 'login' %>		
+			<li>
+				<%= link_to "Login", '/login' %>
+			</li>
+		<% end %>
+		<% if !signed_in? && session[:request] == 'login' %>
+			<li>
+				<%= link_to "Startseite", '/' %>
+			</li>
+		<% end %>
+		<% if signed_in? and session[:request] == 'experts' %>
+			<li>
+				<%= link_to "Neuer Experte", new_expert_path %>
+			</li>
+
+			<li>
+				<%= link_to "Logout", '/logout', method: "delete" %>
+			</li>
+		<% end %>
+		<% if signed_in? &&  session[:request] == 'new_expert' %>
+			<li>
+				<%= link_to 'Abbrechen', experts_path %>
+			</li>
+			<li>
+				<%= link_to "Logout", '/logout', method: "delete" %>
+			</li>
+		<% end %>
+		<% if signed_in? and session[:request] == '' %>
+			<li>
+				<%= link_to "Expertendaten", experts_path %>
+			</li>
+			<li>
+				<%= link_to "Logout", '/logout', method: "delete" %>
+			</li>
+		<% end %>
+	</ul>
+</div>

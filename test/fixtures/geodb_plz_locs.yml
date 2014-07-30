@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  loc_id: 1
+  plz_7: MyString
+  plz: MyString
+  lat: 
+  lon: 
+  lat_bm: 
+  lon_bm: 
+  ort: MyString
+
+two:
+  loc_id: 1
+  plz_7: MyString
+  plz: MyString
+  lat: 
+  lon: 
+  lat_bm: 
+  lon_bm: 
+  ort: MyString

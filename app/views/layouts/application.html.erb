@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<title>EnEx - Die Energie-Experten-Suche</title>
+		<%= stylesheet_link_tag    "application", :media => "all" %>
+		<%= javascript_include_tag "application" %>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="revisit-after" content="3 days" />
+		<meta name="description" content="EnEx - Die Energie-Experten-Suche" />
+		<meta name="keywords" content="Energieberatung Salzgitter, Energieberatungsagentur, Energieberatung, Energieausweis, Salzgitter, Lebenstedt, Salzgitter-Bad, Wolfenbüttel, Braunschweig, Peine, Energieeffizienz, Energieverbrauch, Energiebedarf, kfw-förderung, KfW, Förderprogramm, Mittelstand, KMU, Freiberufler, Selbstständige, kleine und mittlere Unernehmen, unabhängig, Initialberatung, Energieberater, Klima schützen, Kosten senken, Imagesteigerung, Verbrauch optimieren, DEN, Deutsches Energieberater Netzwerk, BAFA, dena, die-energieberatungsagentur.de, www.die-energieberatungsagentur.de, UR" />
+		<%= csrf_meta_tags %>
+	</head>
+	<body>
+		<%= render 'layouts/header' %>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-2 col-lg-2">
+					<%= render 'layouts/menue' %>
+				</div>
+				<div class="col-md-10 col-lg-8">
+					<% flash.each do |key, value| %>
+						<%= content_tag(:div, value, class: "alert alert-#{key}") %>
+					<% end %>
+					<%= yield %>
+				</div>
+			</div>
+			<%= render 'layouts/footer' %>
+		</div>
+		<%= debug(params) if Rails.env.development? %>
+		<% debug(params[:page]) if Rails.env.development? %>
+	</body>
+</html>

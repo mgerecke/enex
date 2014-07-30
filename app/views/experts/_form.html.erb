@@ -1,0 +1,156 @@
+
+<%= form_for(@expert, class: 'form-horizontal') do |f| %>
+  <% if @expert.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@expert.errors.count, "error") %> prohibited this expert from being saved:</h2>
+
+      <ul>
+      <% @expert.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+	</div>
+	<% end %>
+	<div class="row">
+		<div class="form-group">
+			<label for="firmenname" class="col-sm-2 control-label">Firma</label>
+			<div class="col-sm-6">
+				<%= f.text_field :firmenname, class: 'form-control' %>
+			</div>
+		</div>
+	</div><!-- /row -->
+	<div class="row">
+		<div class="form-group">
+			<label for="Anrede" class="col-sm-2 control-label">Anrede</label>
+			<div class="col-sm-2">
+				<%= f.text_field :anrede, class: 'form-control' %>
+			</div>
+		</div>
+	</div><!-- /row -->
+	<div class="row">
+		<div class="form-group">
+			<label for="titel" class="col-sm-2 control-label">Titel</label>
+			<div class="col-sm-2">
+				<%= f.text_field :titel, class: 'form-control' %>
+			</div>
+		</div>
+	</div><!-- /row -->
+	<div class="row">
+		<div class="form-group">
+			<label for="Name" class="col-sm-2 control-label">Name</label>
+			<div class="col-sm-6">
+				<%= f.text_field :name, class: 'form-control' %>
+			</div>
+		</div>
+	</div><!-- /row -->
+	<div class="row">
+		<div class="form-group">
+			<label for="Strasse" class="col-sm-2 control-label">Stra&szlig;e/HausNr</label>
+			<div class="col-sm-6">
+				<%= f.text_field :strasse, class: 'form-control' %>
+			</div>
+			<div class="col-sm-2">
+				<%= f.text_field :hausnr, class: 'form-control' %>
+			</div>
+		</div>
+	</div><!-- /row -->
+	<div class="row">
+		<div class="control-group">
+			<label for="plz" class="col-sm-2 control-label">PLZ</label>
+			<div class="col-sm-2">
+				<%= f.text_field :plz, class: 'form-control' %>
+			</div>
+		</div>
+	</div><!-- /row -->
+	<div class="row">
+		<div class="control-group">
+			<label for="Ort" class="col-sm-2 control-label">Ort</label>
+			<div class="col-sm-6">
+				<%= f.text_field :ort, class: 'form-control' %>
+			</div>
+		</div>
+	</div><!-- /row -->
+	<div class="row">
+		<div class="form-group">
+			<label for="Vorwahl" class="col-sm-2 control-label">Vorwahl/Telefon</label>
+			<div class="col-sm-2">
+				<%= f.text_field :vorwahl, class: 'form-control' %>
+			</div>
+			<div class="col-sm-2">
+				<%= f.text_field :telefon, class: 'form-control' %>
+			</div>
+		</div>
+	</div><!-- /row -->
+	<div class="row">
+		<div class="form-group">
+			<label for="Email" class="col-sm-2 control-label">Email</label>
+			<div class="col-sm-4">
+				<%= f.text_field :email, class: 'form-control', type: 'email' %>
+			</div>
+		</div>
+	</div><!-- /row -->
+	<div class="row">
+		<div class="form-group">
+			<label for="webseite" class="col-sm-2 control-label">Website</label>
+			<div class="col-sm-4">
+				<%= f.text_field :website, class: 'form-control' %>
+			</div>
+		</div>
+	</div><!-- /row -->
+	<div class="row">
+		<div class="form-group">
+			<label for="ausbildung" class="col-sm-2 control-label">Ausbildung</label>
+			<div class="col-sm-6">
+				<%= f.text_field :ausbildung, class: 'form-control' %>
+			</div>
+		</div>
+	</div><!-- /row -->
+	<div class="row">
+		<div class="form-group">
+			<label for="bafa" class="col-sm-2 control-label">BaFa</label>
+			<div class="col-sm-1">
+				<%= f.check_box :bafa, class: 'form-control' %>
+			</div>
+		</div>
+	</div><!-- /row -->
+	<div class="row">
+		<div class="form-group">
+			<label for="kfw_b" class="col-sm-2 control-label">KfW-Bau</label>
+			<div class="col-sm-1">
+				<%= f.check_box :kfw_bauen_und_sanieren, class: 'form-control' %>
+			</div>
+		</div>
+	</div><!-- /row -->		
+	<div class="row">
+		<div class="form-group">
+			<label for="ef" class="col-sm-2 control-label">energ.Fachplan.</label>
+			<div class="col-sm-1">
+				<%= f.check_box :energ_fachplanung, class: 'form-control' %>
+			</div>
+		</div>
+	</div><!-- /row -->
+	<div class="row">
+		<div class="form-group">
+			<label for="baubegleitung" class="col-sm-2 control-label">Baubegleitung</label>
+			<div class="col-sm-1">
+				<%= f.check_box :baubegleitung, class: 'form-control' %>
+			</div>
+		</div>
+	</div><!-- /row -->
+	<div class="row">	
+		<div class="form-group">
+			<label for="kfw_denkmal" class="col-sm-2 control-label">KfW_Denkmal</label>
+			<div class="col-sm-1">
+				<%= f.check_box :kfw_denkmal, class: 'form-control' %>
+			</div>
+		</div>
+	</div><!-- /row -->	
+	<br />
+	<div class="row">
+		<div class="form-group">
+			<div class="col-sm-2">
+				<%= f.submit "speichern", class: "btn btn-sm btn-primary" %>
+			</div>
+		</div>
+	</div><!-- /row -->		
+<% end %>

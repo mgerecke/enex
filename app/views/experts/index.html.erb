@@ -1,0 +1,43 @@
+<div class="row">
+	<div class="col-md-10 col-lg-8">
+		<h3>Liste der Energie-Experten</h3>
+	</div>
+</div><!-- /row -->
+<div class="row">
+	<div class="col-md-10 col-lg-8">
+		<div class="pagination">
+			<%= will_paginate @experts, :previous_label => "&laquo; Zur&uuml;ck", :next_label => " Vor &raquo;" %>
+		</div>
+	</div>
+</div><!-- /row -->
+<div class="row">
+	<div class="col-md-10 col-lg-8">
+		<table class="table-condensed table-hover" >
+		  <tr>
+			<th>Firma/Name</th>
+			<th>EMail</th>
+			<th>Plz</th>
+			<th>Ort</th>
+		  </tr>
+		<% @experts.each do |expert| %>
+		  <tr>
+			<% if expert.firmenname.empty? %>
+				<td><%= link_to expert.name, edit_expert_path(expert) %></td>
+			<% else %> 
+				<td><%= link_to expert.firmenname, edit_expert_path(expert) %></td>
+			<% end %>
+			<td><%= expert.email %></td>
+			<td><%= expert.plz %></td>
+			<td><%= expert.ort %></td>
+		  </tr>
+		<% end %>
+		</table>
+	<div>
+</div><!-- /row -->
+<div class="row">
+	<div class="col-md-10 col-lg-8">
+		<div class="pagination">
+			<%= will_paginate @experts, :previous_label => "&laquo; Zur&uuml;ck", :next_label => " Vor &raquo;" %>
+		</div>
+	</div>
+</div><!-- /row -->
