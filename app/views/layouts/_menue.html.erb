@@ -27,12 +27,6 @@
 			<% end %>
 			<% if session[:request] == '' %>
 				<li>
-					<%= link_to "Kontakt", '/contact' %>
-				</li>
-				<li>
-					<%= link_to "Impressum", '/impressum' %>
-				</li>
-				<li>
 					<a  href="#">Energieportal</a>
 				</li>
 				<p>&nbsp;</p>
@@ -50,7 +44,7 @@
 		<% end %>
 		<% if signed_in? and session[:request] == 'experts' %>
 			<li>
-				<%= link_to "Neuer Experte", new_expert_path %>
+				<%= link_to "Home", root_path %>
 			</li>
 
 			<li>

@@ -11,17 +11,19 @@
  $white: #fff;
  $hellblau: #EAF3FC;
  $dunkelblau: #3FA9F5;
-
- .farbe-dunkelrot  {
+ $lightslategray: #778899;
+ 
+ farbe-dunkelrot  {
 	color: $dunkelrot;
 } 
  
-@mixin box_sizing {
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
- } 
-
+@mixin abgerundet {
+    -moz-border-radius: 10px; /* Firefox */
+    -webkit-border-radius: 10px; /* Safari, Chrome */
+    -khtml-border-radius: 10px; /* Konqueror */
+    border-radius: 10px; /* CSS3 */
+}
+ 
  /* universal */
  html { overflow-y: scroll; }
  body { 
@@ -34,8 +36,13 @@
  }
  
  h3 {
-	color:  $dunkelblau;
+	color:  $lightslategray;
  }
+
+ h5 {
+	color: $lightslategray;
+	font-weight: bolder;
+ } 
  .center { text-align: center; }
  .justify { text-align: justify }
  
@@ -52,8 +59,12 @@ table {
 }
 
 ul {
-	padding-left: 5px;
+	padding-left: 0;
 	list-style: none;
+}
+
+.links {
+	float: left;
 }
 
  #logo { 
@@ -98,6 +109,7 @@ ul {
  footer {
 	border: 1px solid #bbb;
 	padding: 8px;
+	@include abgerundet;
 	border: 1px solid #bbb;
 	background-color: #d3d3d3; 
 	margin-top: 10px;
@@ -116,14 +128,10 @@ ul {
 	font-size: 0.8em;
 }
 
-.debug_dump {
-	clear: both;
-	float: left;
-	width: 100%;
-	margin-top: 25px;
-	margin-left: 20px;
-	@include box_sizing;
-}
+.impressum h5 {
+	font-weight: bold;
+	color: #696969;
+} 
 
 #error_explanation {
 	color: #f00;
@@ -152,7 +160,6 @@ form {
 		}
  }
  
- 
 label {
 	font-size: 13px;
 	color: #696969;
@@ -161,7 +168,7 @@ label {
 
 form {
 	padding-left: 15px;
-	@include box_sizing;
+	@include abgerundet;
 }
 
  input, text, textarea, select, .uneditable-input {
@@ -169,27 +176,27 @@ form {
 	padding: 4x;
 	height: auto;
 	margin-bottom: 1px;
-	font-size: 15px;
-	
+	font-size: 15px;	
 } 
 
-.form-group {
-	padding: 0px;
-}
 .content {
 	border: 1px solid #bbb;
-	margin-top: 3px;
-	padding: 10px;
-	background-color: #fffafa; 
+	margin: 3px;
+	padding: 20px 30px;
+	background-color: #fffafa;
+	@include abgerundet;	
 }
 
-.abgerundet {
-    -moz-border-radius: 10px; /* Firefox */
-    -webkit-border-radius: 10px; /* Safari, Chrome */
-    -khtml-border-radius: 10px; /* Konqueror */
-    border-radius: 10px; /* CSS3 */
+.login {
+	border: 1px solid #bbb;
+	margin: 3px;
+	padding: 20px 30px;
+	background-color: #efefef;
+	@include abgerundet; 
+	h3 {
+		padding-left: 15px;
+	}
 }
-
 .result {
 	font-size: 13px; 
 }
@@ -290,4 +297,12 @@ aside {
 	}
 }
 
+.debug_dump {
+	clear: both;
+	float: left;
+	width: 100%;
+	margin-top: 25px;
+	margin-left: 20px;
+	@include abgerundet;
+}
 

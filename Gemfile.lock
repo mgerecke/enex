@@ -81,7 +81,7 @@ GEM
     rake (10.3.2)
     rdoc (3.12.2)
       json (~> 1.4)
-    sass (3.3.10)
+    sass (3.3.12)
     sass-rails (3.2.6)
       railties (~> 3.2.0)
       sass (>= 3.1.10)
@@ -97,7 +97,7 @@ GEM
       polyglot
       polyglot (>= 0.3.1)
     tzinfo (0.3.40)
-    uglifier (2.5.1)
+    uglifier (2.5.3)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
     will_paginate (3.0.7)
