@@ -56,7 +56,7 @@ require 'capistrano/rails/assets' if rails_version_supports_assets?
 
 # application name ( should be rails1 rails2 rails3 ... )
 set :application, "rails1"
-set :stage, :development
+set :stages, ["development"]
 
 # repository location
 set :repo_url, "mgerecke@github.com/enex.git"
